@@ -1,5 +1,16 @@
 {
   "extends": [
     "config:base"
+  ],
+  "rebaseWhen": "never",
+  "packageRules": [
+    {
+      "matchManagers": [
+        "terraform"
+      ],
+      "additionalBranchPrefix": "{{packageFileDir}}-",
+      "commitMessageSuffix": "({{packageFileDir}})",
+      "groupName": "terraform"
+    }
   ]
 }
